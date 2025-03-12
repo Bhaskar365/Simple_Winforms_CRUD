@@ -88,6 +88,7 @@
             tbFirstName.Name = "tbFirstName";
             tbFirstName.Size = new Size(397, 31);
             tbFirstName.TabIndex = 4;
+            tbFirstName.TextChanged += tbFirstName_TextChanged;
             // 
             // label3
             // 

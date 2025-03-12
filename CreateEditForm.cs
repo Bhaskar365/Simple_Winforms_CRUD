@@ -23,7 +23,7 @@ namespace WinFormsApp4
 
         private int clientId = 0;
 
-        public void EditClient(Client client) 
+        public void EditClient(Client client)
         {
             this.Text = "Edit Client";
             this.lbTitle.Text = "Edit Client";
@@ -61,7 +61,7 @@ namespace WinFormsApp4
 
             var repo = new ClientRepository();
 
-            if(client.id == 0)
+            if (client.id == 0)
             {
                 repo.CreateClient(client);
             }
@@ -69,7 +69,7 @@ namespace WinFormsApp4
             {
                 repo.UpdateClient(client);
             }
-           
+
 
             this.DialogResult = DialogResult.OK;
         }
@@ -77,6 +77,11 @@ namespace WinFormsApp4
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void tbFirstName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

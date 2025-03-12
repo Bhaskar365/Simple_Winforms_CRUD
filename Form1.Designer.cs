@@ -108,6 +108,7 @@
             Controls.Add(label1);
             Name = "Form1";
             Text = "CRUD Manager";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)clientsTable).EndInit();
             ResumeLayout(false);
         }

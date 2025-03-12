@@ -40,7 +40,7 @@ namespace WinFormsApp4
             dataTable2.Columns.Add("title");
             dataTable2.Columns.Add("body");
 
-            foreach(var c in clientList)
+            foreach (var c in clientList)
             {
                 var r = dataTable2.NewRow();
 
@@ -99,9 +99,9 @@ namespace WinFormsApp4
 
             int clientId = int.Parse(val);
 
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this client?","Delete Client", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete this client?", "Delete Client", MessageBoxButtons.YesNo);
 
-            if(dialogResult == DialogResult.No)
+            if (dialogResult == DialogResult.No)
             {
                 return;
             }
@@ -138,15 +138,20 @@ namespace WinFormsApp4
             var repo = new ClientRepository();
             var client = repo.GetClient(clientId);
 
-            if(client == null) { return; }
+            if (client == null) { return; }
 
             CreateEditForm form = new CreateEditForm();
             form.EditClient(client);
 
-            if (form.ShowDialog() == DialogResult.OK) 
+            if (form.ShowDialog() == DialogResult.OK)
             {
                 ReadClients();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
